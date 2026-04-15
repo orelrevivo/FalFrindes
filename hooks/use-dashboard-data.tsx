@@ -118,8 +118,8 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       subscriptionPlan,
       canAccessTab: (tabId: string) => {
         if (tabId === "profile") return true;
-        if (tabId === "scan") return formData.displayName && formData.username;
-        if (tabId === "share") return formData.displayName && formData.username && creatorData?.scanStatus === "done";
+        if (tabId === "scan") return !!(formData.displayName && formData.username);
+        if (tabId === "share") return !!(formData.displayName && formData.username && creatorData?.scanStatus === "done");
         if (tabId === "analytics") return !isNewUser && (subscriptionPlan === "standard" || subscriptionPlan === "pro");
         return false;
       }

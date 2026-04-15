@@ -100,7 +100,7 @@ export function Navbar({ showPricing = true, credits = "0.20" }: NavbarProps) {
                 Sign In
               </Link>
               {isPricing && (
-                <Link href={user ? `/dashboard/${user.id}/profile` : "/dashboard"} className="text-xs font-medium text-[#7C3AED] hover:underline">
+                <Link href="/dashboard" className="text-xs font-medium text-[#7C3AED] hover:underline">
                   Dashboard →
                 </Link>
               )}
